@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-sans: 'DM Sans', sans-serif;
+    --font-display: 'Playfair Display', serif;
+
+    /* A refined "Casino Baize" palette */
+    --background: 147 45% 11%;
+    --foreground: 45 40% 98%;
+
+    --card: 40 33% 98%;
+    --card-foreground: 220 20% 15%;
+
+    --popover: 147 45% 10%;
+    --popover-foreground: 45 40% 98%;
+
+    --primary: 45 93% 47%; /* Gold */
+    --primary-foreground: 147 50% 10%;
+
+    --secondary: 147 30% 20%;
+    --secondary-foreground: 45 40% 98%;
+
+    --muted: 147 30% 18%;
+    --muted-foreground: 147 20% 65%;
+
+    --accent: 0 75% 55%; /* Red accent */
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 147 30% 25%;
+    --input: 147 30% 25%;
+    --ring: 45 93% 47%;
+
+    --radius: 0.75rem;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased selection:bg-primary/30 selection:text-primary-foreground min-h-screen flex flex-col;
+    font-family: var(--font-sans);
+    background-image: radial-gradient(circle at 50% 0%, hsl(147 45% 16%) 0%, hsl(147 50% 8%) 100%);
+    background-attachment: fixed;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    @apply font-bold tracking-tight;
+  }
+}
+
+@layer utilities {
+  .text-shadow-sm {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  }
+  
+  .text-shadow-glow {
+    text-shadow: 0 0 15px rgba(234, 179, 8, 0.5);
+  }
+
+  /* 3D Tile Effect */
+  .tile-3d {
+    box-shadow: 
+      inset 0 1px 0 rgba(255, 255, 255, 0.8),
+      inset 1px 0 0 rgba(255, 255, 255, 0.4),
+      inset -1px 0 0 rgba(0, 0, 0, 0.1),
+      inset 0 -2px 4px rgba(0, 0, 0, 0.15),
+      2px 4px 8px rgba(0, 0, 0, 0.4),
+      4px 8px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  .tile-3d-sm {
+    box-shadow: 
+      inset 0 1px 0 rgba(255, 255, 255, 0.8),
+      inset 0 -1px 2px rgba(0, 0, 0, 0.15),
+      1px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+}
+
+/* Custom Scrollbar for history */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(var(--background)); 
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--border)); 
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground)); 
+}
