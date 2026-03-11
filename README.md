@@ -1,4 +1,7 @@
 # Hand Betting Game
+## Game Preview
+
+![Game Screenshot](assets/game.png)
 
 A simple high-low betting game implemented with React and Node.js.  
 The game uses Mahjong-style tiles to calculate hand values and challenges the player to predict whether the next hand will be higher or lower.
